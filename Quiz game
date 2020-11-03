@@ -1,0 +1,23 @@
+from Question import Question
+ques_prompt=[
+    "Question1 ? \n (a) \n (b) \n (c) \n\n"
+    "Question2 ? \n (a) \n (b) \n (c) \n\n"
+    "Question3 ? \n (a) \n (b) \n (c) \n\n"
+]
+
+questions = [
+  Question(ques_prompt[0], "a"),
+  Question(ques_prompt[1], "c"),
+  Question(ques_prompt[2], "b"),
+
+]
+
+def run_test(questions):
+  score = 0
+  for question in questions:
+    answer = input(questions.prompt)
+    if answer == questions.answer:
+      score+=1
+  print("You got " + str(score) + "/" + str(len(questions)))
+
+run_test(questions)
